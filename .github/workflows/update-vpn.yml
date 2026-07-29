@@ -26,6 +26,12 @@ jobs:
       - name: Build files
         run: python3 scripts/update_vpn.py
 
+      - name: Debug
+        run: |
+          pwd
+          ls -la
+          find . -maxdepth 2 -type f
+
       - name: Commit changes
         run: |
           if git diff --quiet -- all-vpn.txt all-vpn-base64.txt; then
